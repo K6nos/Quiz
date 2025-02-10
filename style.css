@@ -1,23 +1,64 @@
-#game {
-    border: 2px solid black;
-    width: 600px;
-    height: 400px;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-#cart {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    bottom: 0;
-    left: 275px;
-    background-color: red;
+
+#start-screen, #trolley-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
 }
-.obstacle {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: -50px;
-    background-color: blue;
+
+#start-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
+
+#start-button:hover {
+    background-color: #0056b3;
+}
+
+#trolley-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#question-area {
+    margin-bottom: 20px;
+}
+
+#answer-area {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.answer-button {
+    flex: 1;
+    padding: 10px;
+    margin: 0 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.answer-button:hover {
+    background-color: #0056b3;
+}
+
+
