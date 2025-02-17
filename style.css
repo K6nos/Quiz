@@ -6,6 +6,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-image: url(./quiz.jpg);
+    background-size: cover;
 }
 
 #start-screen, #trolley-container {
@@ -60,5 +62,4 @@ body {
 .answer-button:hover {
     background-color: #0056b3;
 }
-
 
