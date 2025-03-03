@@ -347,6 +347,7 @@ function getRandomQuestions(num) {
     return shuffled.slice(0, num);//上からｎ問取得
 }
 
+//タイトルに戻るボタンが押されたとき
 document.getElementById('restart-button').addEventListener('click', () => {
     document.getElementById('success-screen').style.display = 'none';
     document.getElementById('trolley-container').style.display = 'none';
@@ -357,6 +358,7 @@ document.getElementById('restart-button').addEventListener('click', () => {
 let selectedQuestions = [];// 選択された質問を保持する配列
 let quizMusic = document.getElementById('quiz-music'); // 音楽要素取得
 
+//スタートボタンが押されたとき
 document.getElementById('start-button').addEventListener('click', () => {
     selectedQuestions = getRandomQuestions(10);
     currentQuestionIndex = 0;
@@ -377,6 +379,7 @@ function stopMusic() {
     quizMusic.currentTime = 0;
 }
 
+//問題をリセット
 function resetQuiz() {
     currentQuestionIndex = 0;
     selectedQuestions = getRandomQuestions
