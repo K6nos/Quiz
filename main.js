@@ -317,9 +317,9 @@ function checkAnswer(index) {
         if (currentQuestionIndex < selectedQuestions.length) {//問題が残っている場合
             showQuestion();//次の問題
         } else {
-            alert('脱出成功！おめでとうございます！');
-            document.getElementById('start-screen').style.display = 'block';
+            document.getElementById('start-screen').style.display = 'none';
             document.getElementById('trolley-container').style.display = 'none';
+            document.getElementById('success-screen').style.display = 'block';
         }
     } else {
         alert('不正解！脱出失敗！');
@@ -344,6 +344,13 @@ function getRandomQuestions(num) {
     const shuffled = shuffleQuestions(questions);//問題シャッフル
     return shuffled.slice(0, num);//上からｎ問取得
 }
+
+document.getElementById('restart-button').addEventListener('click', () => {
+    document.getElementById('success-screen').style.display = 'none';
+    document.getElementById('trolley-container').style.display = 'none';
+    document.getElementById('start-screen').style.display = 'block';
+    resetQuiz();
+})
 
 let selectedQuestions = [];// 選択された質問を保持する配列
 
