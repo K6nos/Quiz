@@ -320,12 +320,14 @@ function checkAnswer(index) {
             document.getElementById('start-screen').style.display = 'none';
             document.getElementById('trolley-container').style.display = 'none';
             document.getElementById('success-screen').style.display = 'block';
+            stopMusic();
         }
     } else {
         alert('不正解！脱出失敗！');
         document.getElementById('start-screen').style.display = 'block';
         document.getElementById('trolley-container').style.display = 'none';
         resetQuiz();
+        stopMusic();
     }
 }
 
@@ -353,6 +355,7 @@ document.getElementById('restart-button').addEventListener('click', () => {
 })
 
 let selectedQuestions = [];// 選択された質問を保持する配列
+let quizMusic = document.getElementById('quiz-music'); // 音楽要素取得
 
 document.getElementById('start-button').addEventListener('click', () => {
     selectedQuestions = getRandomQuestions(10);
@@ -360,7 +363,19 @@ document.getElementById('start-button').addEventListener('click', () => {
     document.getElementById('start-screen').style.display = 'none';
     document.getElementById('trolley-container').style.display = 'block';
     showQuestion();
+    playMusic();
 });
+
+// 音楽再生
+function playMusic() {
+    quizMusic.play();
+}
+
+// 音楽停止
+function stopMusic() {
+    quizMusic.pause();
+    quizMusic.currentTime = 0;
+}
 
 function resetQuiz() {
     currentQuestionIndex = 0;
